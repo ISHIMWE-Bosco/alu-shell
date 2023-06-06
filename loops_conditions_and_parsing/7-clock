@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+hours=0
+minutes=1
+count=0
+
+while [ $hours -lt 13 ]; do
+  while [ $minutes -lt 60 ]; do
+    printf "%02d:%02d\n" $hours $minutes
+    ((minutes++))
+    ((count++))
+    if [ $count -eq 70 ]; then
+      break 2
+    fi
+  done
+  ((hours++))
+  minutes=0
+done
